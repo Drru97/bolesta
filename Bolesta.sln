@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{45E919CA-FBB3-4BD6-9A86-396BA276FABC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{ABF9E759-31A0-4175-A527-BE4348BC062F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bolesta.Tests.Unit", "test\Bolesta.Tests.Unit\Bolesta.Tests.Unit.csproj", "{410EFC66-D1B2-40B3-9DB5-E6F75A3355E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bolesta.BusinessLogic", "src\Bolesta.BusinessLogic\Bolesta.BusinessLogic.csproj", "{1F28000D-973E-40D4-90D8-1D42B9659629}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bolesta.Lab2", "src\Bolesta.Lab2\Bolesta.Lab2.csproj", "{FC500845-28A1-4595-9229-756A9C39AB3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{410EFC66-D1B2-40B3-9DB5-E6F75A3355E0} = {ABF9E759-31A0-4175-A527-BE4348BC062F}
+		{1F28000D-973E-40D4-90D8-1D42B9659629} = {45E919CA-FBB3-4BD6-9A86-396BA276FABC}
+		{FC500845-28A1-4595-9229-756A9C39AB3A} = {45E919CA-FBB3-4BD6-9A86-396BA276FABC}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{410EFC66-D1B2-40B3-9DB5-E6F75A3355E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{410EFC66-D1B2-40B3-9DB5-E6F75A3355E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{410EFC66-D1B2-40B3-9DB5-E6F75A3355E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{410EFC66-D1B2-40B3-9DB5-E6F75A3355E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F28000D-973E-40D4-90D8-1D42B9659629}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F28000D-973E-40D4-90D8-1D42B9659629}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F28000D-973E-40D4-90D8-1D42B9659629}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F28000D-973E-40D4-90D8-1D42B9659629}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC500845-28A1-4595-9229-756A9C39AB3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC500845-28A1-4595-9229-756A9C39AB3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC500845-28A1-4595-9229-756A9C39AB3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC500845-28A1-4595-9229-756A9C39AB3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
