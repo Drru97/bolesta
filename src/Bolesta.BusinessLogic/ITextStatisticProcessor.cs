@@ -4,6 +4,6 @@ namespace Bolesta.BusinessLogic
 {
     public interface ITextStatisticProcessor
     {
-        TextStatistic GetTextStatistic(string text);
+        TextStatistic GetTextStatistic();
     }
 }

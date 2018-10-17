@@ -1,17 +1,65 @@
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using Bolesta.BusinessLogic.Models;
 
 namespace Bolesta.BusinessLogic.Implementation
 {
     public class InMemoryTextStatisticProcessor : ITextStatisticProcessor
     {
-        public TextStatistic GetTextStatistic(string text)
+        private string _text;
+
+        public InMemoryTextStatisticProcessor(string text)
         {
-            throw new System.NotImplementedException();
+            _text = text;
         }
 
-        private long GetSymbolCount(string text)
+        public TextStatistic GetTextStatistic()
         {
-            return text.co
+            var characterCount = GetSymbolCount();
+
+            var characters = GetUniqueCharacters();
+            var characterOccurrences = characters
+                .Select(character => new CharacterOccurrence
+                {
+                    Character = character, Occurrence = GetCharacterOccurence(character, characterCount)
+                })
+                .ToList();
+
+            var textStatistic = new TextStatistic
+            {
+                SymbolCount = characterCount,
+                LetterCount = GetLetterCount(),
+                WordCount = GetLetterCount(),
+                LetterOccurrences = characterOccurrences
+            };
+
+            return textStatistic;
+        }
+
+        private long GetSymbolCount()
+        {
+            return _text.Length;
+        }
+
+        private long GetLetterCount()
+        {
+            return _text.Count(char.IsLetter);
+        }
+
+        private long GetWordCount()
+        {
+            return Regex.Matches(_text, @"((\w+(\s?)))").Count;
+        }
+
+        private IEnumerable<char> GetUniqueCharacters()
+        {
+            return _text.Distinct().ToArray();
+        }
+
+        private decimal GetCharacterOccurence(char character, long characterCount)
+        {
+            return (decimal)_text.Select(ch => ch == character).Count() / characterCount;
         }
     }
 }
