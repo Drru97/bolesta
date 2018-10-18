@@ -1,14 +1,14 @@
-﻿using System;
+using System;
 
 namespace Bolesta.BusinessLogic.Models
 {
-    public class CharacterOccurrence
+    public class WordOccurrence
     {
         private const int PercentConstant = 100;
         private long _count;
         private decimal _occurrence;
         
-        public char Character { get; set; }
+        public string Word { get; set; }
 
         public long Count
         {
