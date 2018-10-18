@@ -6,8 +6,9 @@ namespace Bolesta.BusinessLogic.Models
 {
     public class TextStatistic
     {
+        private const decimal Epsilon = 1e-6m;
         private IList<CharacterOccurrence> _letterOccurrences;
-
+        
         public long SymbolCount { get; set; }
         public long LetterCount { get; set; }
         public long WordCount { get; set; }
@@ -31,9 +32,9 @@ namespace Bolesta.BusinessLogic.Models
             }
 
             var occurrencesSum = value.Select(lo => lo.Occurrence).Sum();
-            if (occurrencesSum > 1m)
-            {   // TODO: need to fix issue with conversions
-                //throw new ArgumentException();
+            if (Math.Abs(occurrencesSum - 1m) > Epsilon)
+            {
+                throw new ArgumentException();
             }
         }
     }

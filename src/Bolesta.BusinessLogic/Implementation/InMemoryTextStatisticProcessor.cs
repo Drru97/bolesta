@@ -7,7 +7,7 @@ namespace Bolesta.BusinessLogic.Implementation
 {
     public class InMemoryTextStatisticProcessor : ITextStatisticProcessor
     {
-        private string _text;
+        private readonly string _text;
 
         public InMemoryTextStatisticProcessor(string text)
         {
@@ -30,7 +30,7 @@ namespace Bolesta.BusinessLogic.Implementation
             {
                 SymbolCount = characterCount,
                 LetterCount = GetLetterCount(),
-                WordCount = GetLetterCount(),
+                WordCount = GetWordCount(),
                 LetterOccurrences = characterOccurrences
             };
 
@@ -54,12 +54,12 @@ namespace Bolesta.BusinessLogic.Implementation
 
         private IEnumerable<char> GetUniqueCharacters()
         {
-            return _text.Distinct().ToArray();
+            return _text.ToUpper().Distinct().ToArray();
         }
 
         private decimal GetCharacterOccurence(char character, long characterCount)
         {
-            return (decimal)_text.Select(ch => ch == character).Count() / characterCount;
+            return (decimal) _text.ToUpper().Count(ch => ch == character) / characterCount;
         }
     }
 }
